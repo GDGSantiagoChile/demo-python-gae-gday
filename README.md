@@ -18,7 +18,9 @@ Documentación
 
 * [Google App Engine Python](https://cloud.google.com/appengine/docs/python/)
 * [Google Python NDB DataStore](https://cloud.google.com/appengine/docs/python/ndb/)
-* [Google Oauth2 Python](https://developers.google.com/api-client-library/python/guide/aaa_oauth)
+* [Google OAuth2 Python](https://developers.google.com/api-client-library/python/guide/aaa_oauth)
+* [Python third-party libraries](https://cloud.google.com/appengine/docs/python/tools/libraries27)
+* [Python Webapp2 Framework](https://webapp-improved.appspot.com/)
 
 
 Bibliotecas utilizadas
