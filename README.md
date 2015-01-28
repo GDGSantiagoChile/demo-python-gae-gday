@@ -13,6 +13,14 @@ Descargas
 * [Google App Engine Launcher](https://cloud.google.com/appengine/downloads)
 
 
+Documentación
+=============
+
+* [Google App Engine Python](https://cloud.google.com/appengine/docs/python/)
+* [Google Python NDB DataStore](https://cloud.google.com/appengine/docs/python/ndb/)
+* [Google Oauth2 Python](https://developers.google.com/api-client-library/python/guide/aaa_oauth)
+
+
 Bibliotecas utilizadas
 ======================
 
