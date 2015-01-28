@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="container">
+	<h1>Listado de registros</h1>
+	<table class="table table-striped table-hover panel panel-success">
+		<thead class="panel-heading">
+			<th class="">Nombre</th>
+			<th class="">Email</th>
+			<th class="">Comentario</th>
+			<th class="">Fecha</th>
+		</thead>
+		<tbody>
+			{% for registro in registros %}
+			<tr>
+				<td>{{ registro.nombre }}</td>
+				<td>{{ registro.email }}</td>
+				<td>{{ registro.comentario }}</td>
+				<td>{{ registro.fecha_registro }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}

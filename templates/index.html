@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="container">
+	<ul class="list-group">
+		<img class="img-rounded" src="{{ data.picture }}" style="width: 200px; height: 200px;">
+		<br><br>
+		<li class="list-group-item"><strong>Nombre Completo :</strong> {{ data.name }}</li>
+		<li class="list-group-item"><strong>Correo :</strong> {{ data.email }}</li>
+		{% if data.link %}
+			<li class="list-group-item"><strong>Mi G+ :</strong> {{ data.link }}</li>
+		{% endif %}
+	</ul>
+</div>
+{% endblock %}
