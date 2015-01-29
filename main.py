@@ -25,10 +25,10 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 )
 
 
-# creación del objeto decorator
+# creación del objeto decorator, objeto utilizado para OAuth2
 decorator = OAuth2Decorator(
-    client_id='1012452221438-9tpqm4tcg27262o0vmi5gbq88a8q35em.apps.googleusercontent.com',
-    client_secret='iVPiX1TbbmVHaRVd8OX_vpMP',
+    client_id='<TU_ID_DE_CLIENTE>',
+    client_secret='<TU_CLIENTE_SECRETO>',
     scope='https://www.googleapis.com/auth/userinfo.profile ' +
     'https://www.googleapis.com/auth/userinfo.email ',
 )
@@ -58,9 +58,13 @@ class ControladorInicio(webapp2.RequestHandler):
             # renderizar el template con las variables injectadas
             self.response.write(template.render(variables))
         else:
+        	# en este caso se utiliza la autenticación y utilizar
+        	# el servicio userinfo_service y obtener datos del usuario
             http = decorator.http()
             data = userinfo_service.userinfo().get().execute(http=http)
-            variables = {'data': data,}
+            variables = {
+            	'data': data,
+            }
             template = JINJA_ENVIRONMENT.get_template('index.html')
             self.response.write(template.render(variables))
 
@@ -70,6 +74,7 @@ class ControladorRegistros(webapp2.RequestHandler):
     @decorator.oauth_required
     def get(self):
 
+        # presentar el formulario de ingreso de registro
         template = JINJA_ENVIRONMENT.get_template('form_registro.html')
         self.response.write(template.render())
     
@@ -98,7 +103,9 @@ class ControladorListadoRegistros(webapp2.RequestHandler):
     @decorator.oauth_required
     def get(self):
 
+    	# se crea una instancia del objeto registro
     	registro = RegistroContacto()
+    	# llamar el metodo creado en el modulo modelos.py
     	registros = registro.listar_registros()
     	variables = {
     		'registros': registros,

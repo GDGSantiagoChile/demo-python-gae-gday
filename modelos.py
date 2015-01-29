@@ -4,6 +4,7 @@
 import datetime
 
 
+# import a la modulo NDB (New DB)
 from google.appengine.ext import ndb
 
 
